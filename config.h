@@ -3,7 +3,7 @@
 #include "bstack.c"
 
 /* appearance */
-static const char font[]            = "Terminus:pixelsize=16:antialias=false:autohint=false";
+static const char font[]            = "-*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#073642";
 static const char normbgcolor[]     = "#002936";
 static const char normfgcolor[]     = "#93a1a1";
@@ -64,7 +64,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]   = { "/home/ctorres/.dwm/bin/dmenu_run", "-m", dmenumon, "-p", "dwm> ", NULL };
+static const char *dmenucmd[]   = { "/home/ctorres/bin/dmenu_run", "-m", dmenumon, "-p", "dwm> ", NULL };
 static const char *skype[]      = { "LDskype", NULL };
 static const char *termcmd[]    = { "st", NULL };
 static const char *exitcmd[]    = { "killall", "startdwm", NULL };
