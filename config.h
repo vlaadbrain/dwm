@@ -25,7 +25,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
     { "Pavucontrol",          NULL,       NULL,       0,            True,        -1 },
-    { "feh",                  NULL,       NULL,       0,            True,        -1 },
     { "VirtualBox",           NULL,       NULL,       0,            True,        -1 },
     { "Eclipse",              NULL,       "Eclipse",  0,            True,        -1 },
     { "Eclipse",              NULL,       "- Eclipse",0,            False,       -1 },
@@ -78,6 +77,7 @@ static const char *vol_mute[]   = { "amixer", "-q", "set", ALSAMASTER, "toggle",
 static const char *mic_mute[]   = { "amixer", "-c", "0", "-q", "set", ALSAFRONTMIC, "toggle", NULL };
 static const char *toggle_mpd[] = { "mpc", "toggle", NULL };
 static const char *stop_mpd[]   = { "mpc", "stop", NULL };
+static const char *ncmpc_term[] = { "st", "-e", "ncmpc", NULL };
 
 static Key keys[] = {
     /* modifier                     key                            function        argument */
@@ -93,6 +93,7 @@ static Key keys[] = {
     { MODKEY,                       XF86XK_AudioMute,              spawn,          {.v = mic_mute } },
     { MODKEY,                       XK_p,                          spawn,          {.v = toggle_mpd } },
     { MODKEY,                       XK_s,                          spawn,          {.v = stop_mpd } },
+    { MODKEY,                       XK_n,                          spawn,          {.v = ncmpc_term } },
     { MODKEY|ShiftMask,             XK_Escape,                     spawn,          {.v = lockscreen } },
     { MODKEY|ShiftMask,             XK_q,                          spawn,          {.v = exitcmd } },
     { MODKEY|ShiftMask,             XK_r,                          quit,           {0} },
