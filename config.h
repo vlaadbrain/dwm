@@ -3,7 +3,9 @@
 #include "bstack.c"
 
 /* appearance */
-static const char font[]            = "-*-terminus-bold-*-*-*-14-*-*-*-*-*-*-*";
+static const char *fonts[] = {
+	"Terminus:bold:size=9"
+};
 static const char normbordercolor[] = "#073642";
 static const char normbgcolor[]     = "#002936";
 static const char normfgcolor[]     = "#93a1a1";
@@ -12,8 +14,8 @@ static const char selbgcolor[]      = "#073642";
 static const char selfgcolor[]      = "#93a1a1";
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const Bool showbar           = True;     /* False means no bar */
-static const Bool topbar            = True;     /* False means bottom bar */
+static const int showbar            = 1;     /* False means no bar */
+static const int topbar             = 1;     /* False means bottom bar */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -35,7 +37,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact      = 0.80; /* factor of master area size [0.05..0.95] */
 static const int nmaster      = 1;    /* number of clients in master area */
-static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
+static const int resizehints  = 0; /* True means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
