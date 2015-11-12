@@ -24,8 +24,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-    { "Pavucontrol",          NULL,       NULL,       0,            True,        -1 },
-    { "VirtualBox",           NULL,       NULL,       0,            True,        -1 },
     { "Eclipse",              NULL,       "Eclipse",  0,            True,        -1 },
     { "Eclipse",              NULL,       "- Eclipse",0,            False,       -1 },
     { "STS",                  "STS",      NULL       ,0,            True,        -1 },
