@@ -41,7 +41,6 @@ static const int resizehints  = 0; /* True means respect size hints in tiled res
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },
 	{ "TTT",      bstack },
 	{ "[M]",      monocle },
 };
