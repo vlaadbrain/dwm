@@ -32,6 +32,8 @@ static const Rule rules[] = {
     { "STS",                  NULL,       "- Spring Tool Suite",0,  False,       -1 },
     { "Exe",                  NULL,       NULL,       0,            False,       -1 },
     { "Skype",                NULL,       NULL,       0,            True,         0 },
+    { "Minecraft 1.10.2",     NULL,       "Minecraft 1.10.2", 0,    False,        0 },
+    { "Minecraft Launcher 1.6.61",NULL,   "Minecraft Launcher 1.6.61",0,False,    0 },
 };
 
 /* layout(s) */
@@ -107,7 +109,6 @@ static Key keys[] = {
     { MODKEY,                       XK_Tab,                        view,           {0} },
     { MODKEY|ShiftMask,             XK_c,                          killclient,     {0} },
     { MODKEY,                       XK_space,                      setlayout,      {0} },
-    { MODKEY,                       XK_m,                          setlayout,      {.v = &layouts[2] } },
     { MODKEY|ShiftMask,             XK_space,                      togglefloating, {0} },
     { MODKEY,                       XK_0,                          view,           {.ui = ~0 } },
     { MODKEY|ShiftMask,             XK_0,                          tag,            {.ui = ~0 } },
