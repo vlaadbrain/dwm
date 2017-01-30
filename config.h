@@ -25,12 +25,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
+	/* class                    instance    title       tags mask     isfloating   monitor */
     { "Eclipse",              NULL,       "Eclipse",  0,            True,        -1 },
     { "Eclipse",              NULL,       "- Eclipse",0,            False,       -1 },
-    { "STS",                  "STS",      NULL       ,0,            True,        -1 },
-    { "STS",                  NULL,       "- Spring Tool Suite",0,  False,       -1 },
-    { "Exe",                  NULL,       NULL,       0,            False,       -1 },
+    { "Java",                 "java",      "STS"     ,0,            True,        -1 },
+    { "Java",                 "java","Spring Tool Suite ",0,        True,        -1 },
+    { "Spring Tool Suite","Spring Tool Suite",NULL,   0,            False,       -1 },
     { "Skype",                NULL,       NULL,       0,            True,         0 },
     { "Minecraft 1.10.2",     NULL,       "Minecraft 1.10.2", 0,    False,        0 },
     { "Minecraft Launcher 1.6.61",NULL,   "Minecraft Launcher 1.6.61",0,False,    0 },
