@@ -4,7 +4,7 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"Terminus:bold:size=9"
+	"Terminus:bold:size=14"
 };
 static const char normbordercolor[] = "#073642";
 static const char normbgcolor[]     = "#002936";
@@ -68,7 +68,7 @@ static const char *dmenucmd[]   = { "/home/ctorres/bin/dmenu_run", "-m", dmenumo
 static const char *skype[]      = { "LDskype", NULL };
 static const char *termcmd[]    = { "st", NULL };
 static const char *exitcmd[]    = { "killall", "startdwm", NULL };
-static const char *browser[]    = { "surf-open.sh", "file:///home/ctorres/.surf/home.html", NULL };
+static const char *browser[]    = { "/usr/bin/google-chrome", NULL };
 static const char *eclipse[]    = { "/home/ctorres/bin/STS", NULL };
 static const char *vol_ctl[]    = { "st", "-e", "alsamixer", NULL };
 static const char *lockscreen[] = { "slock", NULL };
