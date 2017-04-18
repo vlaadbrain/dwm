@@ -31,9 +31,6 @@ static const Rule rules[] = {
     { "Java",                 "java",      "STS"     ,0,            True,        -1 },
     { "Java",                 "java","Spring Tool Suite ",0,        True,        -1 },
     { "Spring Tool Suite","Spring Tool Suite",NULL,   0,            False,       -1 },
-    { "Skype",                NULL,       NULL,       0,            True,         0 },
-    { "Minecraft 1.10.2",     NULL,       "Minecraft 1.10.2", 0,    False,        0 },
-    { "Minecraft Launcher 1.6.61",NULL,   "Minecraft Launcher 1.6.61",0,False,    0 },
 };
 
 /* layout(s) */
@@ -65,10 +62,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]   = { "/home/ctorres/bin/dmenu_run", "-m", dmenumon, "-p", "dwm> ", NULL };
-static const char *skype[]      = { "LDskype", NULL };
 static const char *termcmd[]    = { "st", NULL };
 static const char *exitcmd[]    = { "killall", "startdwm", NULL };
-static const char *browser[]    = { "/usr/bin/google-chrome", NULL };
+static const char *browser[]    = { "/usr/bin/firefox", NULL };
 static const char *eclipse[]    = { "/home/ctorres/bin/STS", NULL };
 static const char *vol_ctl[]    = { "st", "-e", "alsamixer", NULL };
 static const char *lockscreen[] = { "slock", NULL };
@@ -86,7 +82,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_Return,                     spawn,          {.v = termcmd } },
     { MODKEY|ShiftMask,             XK_e,                          spawn,          {.v = eclipse } },
     { MODKEY|ShiftMask,             XK_b,                          spawn,          {.v = browser } },
-    { MODKEY|ShiftMask,             XK_s,                          spawn,          {.v = skype } },
     { MODKEY|ShiftMask,             XK_v,                          spawn,          {.v = vol_ctl } },
     { 0,                            XF86XK_AudioLowerVolume,       spawn,          {.v = vol_dn } },
     { 0,                            XF86XK_AudioRaiseVolume,       spawn,          {.v = vol_up } },
