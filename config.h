@@ -4,7 +4,7 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"Terminus:bold:size=14"
+	"Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true"
 };
 static const char normbordercolor[] = "#073642";
 static const char normbgcolor[]     = "#002936";
@@ -25,12 +25,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                    instance    title       tags mask     isfloating   monitor */
-    { "Eclipse",              NULL,       "Eclipse",  0,            True,        -1 },
-    { "Eclipse",              NULL,       "- Eclipse",0,            False,       -1 },
-    { "Java",                 "java",      "STS"     ,0,            True,        -1 },
-    { "Java",                 "java","Spring Tool Suite ",0,        True,        -1 },
-    { "Spring Tool Suite","Spring Tool Suite",NULL,   0,            False,       -1 },
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -40,7 +37,8 @@ static const int resizehints  = 0; /* True means respect size hints in tiled res
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "TTT",      bstack },
+	{ "TTT",      bstack  },
+	{ "[]=",      tile    },
 	{ "[M]",      monocle },
 };
 
@@ -61,11 +59,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]   = { "/home/ctorres/bin/dmenu_run", "-m", dmenumon, "-p", "dwm> ", NULL };
+static const char *dmenucmd[]   = { "/home/cjt/bin/dmenu_run", "-m", dmenumon, "-p", "dwm> ", NULL };
 static const char *termcmd[]    = { "st", NULL };
 static const char *exitcmd[]    = { "killall", "startdwm", NULL };
-static const char *browser[]    = { "/usr/bin/firefox", NULL };
-static const char *eclipse[]    = { "/home/ctorres/bin/STS", NULL };
+static const char *browser[]    = { "/usr/local/bin/ungoogled-chromium", NULL };
 static const char *vol_ctl[]    = { "st", "-e", "alsamixer", NULL };
 static const char *lockscreen[] = { "slock", NULL };
 static const char *vol_dn[]     = { "amixer", "-q", "set", ALSAMASTER, ALSARATE"-", "unmute", NULL };
@@ -80,7 +77,6 @@ static Key keys[] = {
     /* modifier                     key                            function        argument */
     { MODKEY,                       XK_r,                          spawn,          {.v = dmenucmd } },
     { MODKEY|ShiftMask,             XK_Return,                     spawn,          {.v = termcmd } },
-    { MODKEY|ShiftMask,             XK_e,                          spawn,          {.v = eclipse } },
     { MODKEY|ShiftMask,             XK_b,                          spawn,          {.v = browser } },
     { MODKEY|ShiftMask,             XK_v,                          spawn,          {.v = vol_ctl } },
     { 0,                            XF86XK_AudioLowerVolume,       spawn,          {.v = vol_dn } },
@@ -103,6 +99,7 @@ static Key keys[] = {
     { MODKEY,                       XK_Return,                     zoom,           {0} },
     { MODKEY,                       XK_Tab,                        view,           {0} },
     { MODKEY|ShiftMask,             XK_c,                          killclient,     {0} },
+    { MODKEY,                       XK_m,                          setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_space,                      setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,                      togglefloating, {0} },
     { MODKEY,                       XK_0,                          view,           {.ui = ~0 } },
