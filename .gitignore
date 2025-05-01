@@ -1,1 +1,4 @@
+# ignore cc language server for freebsd
 .ccls-cache/
+# ignore object files
+*.o
