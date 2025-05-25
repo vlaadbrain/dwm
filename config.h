@@ -66,12 +66,12 @@ static const Layout layouts[] = {
 #define ALSAFRONTMIC "\"Front Mic\""
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_normbg, "-nf", col_normfg, "-sb", col_selbg, "-sf", col_selfg, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static char dmenumon[2]         = "0"; /* component of dmenucmd, manipulated in spawn() */
+static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_normbg, "-nf", col_normfg, "-sb", col_selbg, "-sf", col_selfg, "-p", "DWM> ", NULL };
+static const char *termcmd[]    = { "st", NULL };
 static const char *exitcmd[]    = { "stopdwm", NULL };
-static const char *browser[]    = { "/usr/local/bin/ungoogled-chromium", NULL };
-static const char *vol_ctl[]    = { "st", "-e", "alsamixer", NULL };
+static const char *browser[]    = { "/usr/bin/zen", NULL };
+static const char *vol_ctl[]    = { "st", "-e", "alsamixer", "", "", NULL };
 static const char *lockscreen[] = { "slock", NULL };
 static const char *vol_dn[]     = { "amixer", "-q", "set", ALSAMASTER, ALSARATE"-", "unmute", NULL };
 static const char *vol_up[]     = { "amixer", "-q", "set", ALSAMASTER, ALSARATE"+", "unmute", NULL };
@@ -80,6 +80,7 @@ static const char *mic_mute[]   = { "amixer", "-c", "0", "-q", "set", ALSAFRONTM
 static const char *toggle_mpd[] = { "mpc", "toggle", NULL };
 static const char *stop_mpd[]   = { "mpc", "stop", NULL };
 static const char *ncmpc_term[] = { "st", "-e", "ncmpc", NULL };
+static const char *bt_term[]    = { "st", "-e", "bluetui", NULL };
 
 static const Key keys[] = {
     /* modifier                     key                            function        argument */
@@ -94,6 +95,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_p,                          spawn,          {.v = toggle_mpd } },
     { MODKEY,                       XK_s,                          spawn,          {.v = stop_mpd } },
     { MODKEY,                       XK_n,                          spawn,          {.v = ncmpc_term } },
+    { MODKEY|ControlMask|ShiftMask, XK_b,                          spawn,          {.v = bt_term } },
     { MODKEY|ShiftMask,             XK_Escape,                     spawn,          {.v = lockscreen } },
     { MODKEY|ShiftMask,             XK_q,                          spawn,          {.v = exitcmd } },
     { MODKEY|ShiftMask,             XK_r,                          quit,           {0} },
