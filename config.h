@@ -11,7 +11,7 @@ static const char *fonts[]          = {
 	"Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true"
 };
 static const char dmenufont[]       = "Hack Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
-static const char col_normbrdr[]    = "#073642";
+static const char col_normbrdr[]    = "#073650";
 static const char col_normbg[]      = "#002936";
 static const char col_normfg[]      = "#93a1a1";
 static const char col_selbrdr[]     = "#cb4b16";
