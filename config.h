@@ -31,11 +31,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class              instance      title       tags mask     isfloating   monitor */
-	{ "Gimp",             NULL,         NULL,       0,            1,           -1 },
-	{ "jetbrains-studio", NULL,         NULL,       1 << 1,       1,           -1 },
-	{ "Firefox",          NULL,         NULL,       1 << 3,       0,           -1 },
-	{ "zen",              "Navigator",  NULL,       1 << 3,       0,           -1 },
+	/* class                instance      title       tags mask     isfloating   monitor */
+	{ "Gimp",               NULL,         NULL,       0,            1,           -1 },
+	{ "qemu-system-x84_64", NULL,         NULL,       0,            1,           -1 },
+	{ "jetbrains-studio",   NULL,         NULL,       1 << 1,       1,           -1 },
+	{ "Firefox",            NULL,         NULL,       1 << 3,       0,           -1 },
+	{ "zen",                "Navigator",  NULL,       0,            0,           -1 },
 };
 
 /* layout(s) */
@@ -71,7 +72,7 @@ static char dmenumon[2]         = "0"; /* component of dmenucmd, manipulated in 
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_normbg, "-nf", col_normfg, "-sb", col_selbg, "-sf", col_selfg, "-p", "DWM> ", NULL };
 static const char *termcmd[]    = { "st", NULL };
 static const char *exitcmd[]    = { "stopdwm", NULL };
-static const char *browser[]    = { "/usr/bin/zen", NULL };
+static const char *browser[]    = { "surf-open.sh", NULL };
 static const char *vol_ctl[]    = { "st", "-e", "alsamixer", "", "", NULL };
 static const char *lockscreen[] = { "slock", NULL };
 static const char *vol_dn[]     = { "amixer", "-q", "set", ALSAMASTER, ALSARATE"-", "unmute", NULL };
